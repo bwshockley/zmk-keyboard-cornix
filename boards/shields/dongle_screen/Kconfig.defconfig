@@ -1,0 +1,219 @@
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_DONGLE_SCREEN
+
+choice ZMK_DISPLAY_STATUS_SCREEN
+    default ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+endchoice
+
+config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+    select LV_USE_LABEL
+    select LV_USE_IMG
+    select LV_USE_CANVAS
+    select LV_USE_ANIMIMG 
+    select LV_USE_ANIMATION
+    select LV_USE_LINE 
+    select LV_FONT_UNSCII_8
+    select ZMK_WPM
+    imply ZMK_HID_INDICATORS
+
+config ZMK_DONGLE_DISPLAY_DONGLE_BATTERY
+    bool "Show also the battery level of the dongle"
+    depends on BT && (!ZMK_SPLIT_BLE || ZMK_SPLIT_ROLE_CENTRAL)
+
+choice ZMK_DISPLAY_WORK_QUEUE
+    default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
+endchoice
+
+config ZMK_DISPLAY_DEDICATED_THREAD_STACK_SIZE
+    default 4096
+
+choice ST7789V_PIXEL_FORMAT
+	default ST7789V_RGB565
+endchoice
+
+config LV_Z_VDB_SIZE
+    default 100
+
+config LV_Z_MEM_POOL_SIZE
+    default 10000
+
+config LV_DPI_DEF
+    default 261
+
+config LV_Z_BITS_PER_PIXEL
+	default 16
+
+choice LV_COLOR_DEPTH
+	default LV_COLOR_DEPTH_16
+endchoice
+
+config LV_COLOR_16_SWAP
+	default y
+
+config LV_DISP_DEF_REFR_PERIOD
+    default 20
+
+choice LV_FONT_DEFAULT
+    default LV_FONT_DEFAULT_MONTSERRAT_20
+endchoice
+
+config LV_FONT_MONTSERRAT_40
+    default y
+
+config PWM
+    default y
+
+config LED
+    default y
+
+config DONGLE_SCREEN_HORIZONTAL
+    bool "Screen orientation"
+    default y
+    help
+      Orientation of the screen. In default it is horizontal (laying on the side)
+
+config DONGLE_SCREEN_FLIPPED
+    bool "Screen flip option"
+    default n
+    help
+      Should the screen orientation should be flipped in horizontal or vertical orientation?
+
+config DONGLE_SCREEN_IDLE_TIMEOUT_S
+    int "Screen idle timeout in seconds (0 = never off)"
+    default 600
+    help
+      Time in seconds after which the screen turns off when idle. 0 = never off.
+
+config DONGLE_SCREEN_MAX_BRIGHTNESS
+    int "Maximum screen brightness (1-100)"
+    default 80
+    range 1 100
+    help
+        This is the brightness which is used when the dongle is powered on. This is also the maximum brightness used by the dimmer.
+
+config DONGLE_SCREEN_MIN_BRIGHTNESS
+    int "Minimum screen brightness (1-99)"
+    default 1
+    range 1 99
+    help
+        Minimum screen brightness (1-99). This is the brightness used as a minimum value for brightness adjustments with the modifier keys and the ambient light sensor. 
+
+config DONGLE_SCREEN_DEFAULT_BRIGHTNESS
+    int "Default screen brightness (0-100)"
+    default DONGLE_SCREEN_MAX_BRIGHTNESS
+    range DONGLE_SCREEN_MIN_BRIGHTNESS DONGLE_SCREEN_MAX_BRIGHTNESS
+    help
+      The initial brightness level for the screen backlight.
+      This value is used at startup and when the screen is turned on. 
+      It is defaulted to the maximum brightness but can be overridden.
+
+config DONGLE_SCREEN_BRIGHTNESS_KEYBOARD_CONTROL
+    bool "Control screen brightness via keyboard"
+    default y
+    help
+      Allows controlling the screen brightness via keyboard (e.g. F23/F24).
+
+config DONGLE_SCREEN_BRIGHTNESS_UP_KEYCODE
+    int "Keycode for increasing screen brightness"
+    default 115  # KC_F24
+    help
+      Keycode that increases the screen brightness (default: F23).
+
+config DONGLE_SCREEN_BRIGHTNESS_DOWN_KEYCODE
+    int "Keycode for decreasing screen brightness"
+    default 114  # KC_F23
+    help
+      Keycode that decreases the screen brightness (default: F24).
+
+config DONGLE_SCREEN_TOGGLE_KEYCODE
+    int "Keycode for toggle screen off/on"
+    default 113  # KC_F22
+    help
+      Keycode that toggles the screen off and on (default: F22).
+
+config DONGLE_SCREEN_BRIGHTNESS_STEP
+    int "Step for brightness adjustment with keyboard"
+    default 10
+    help
+      How much brightness steps (range MIN_BRIGHTNESS to MAX_BRIGHTNESS) should be applied per keystroke
+
+config DONGLE_SCREEN_WPM_ACTIVE
+    bool "WPM Widget active"
+    default y
+    help
+      If the WPM Widget should be active or not
+
+config DONGLE_SCREEN_MODIFIER_ACTIVE
+    bool "Modifier Widget active"
+    default y
+    help
+      If the Modifier Widget should be active or not
+
+config DONGLE_SCREEN_LAYER_ACTIVE
+    bool "Layer Widget active"
+    default y
+    help
+      If the Layer Widget should be active or not
+
+config DONGLE_SCREEN_OUTPUT_ACTIVE
+    bool "Output Widget active"
+    default y
+    help
+      If the Output Widget should be active or not
+
+config DONGLE_SCREEN_BATTERY_ACTIVE
+    bool "Battery Widget active"
+    default y
+    help
+      If the Battery Widget should be active or not
+
+config DONGLE_SCREEN_AMBIENT_LIGHT
+    bool "Enable automatic brightness via ambient light sensor"
+    default n
+    select SENSOR
+    select APDS9960
+    help
+      If enabled, the ambient light sensor will be used to automatically adjust screen brightness.
+
+config DONGLE_SCREEN_AMBIENT_LIGHT_TEST
+    bool "Enable automatic brightness testing"
+    default n
+    help
+      If enabled, the ambient light sensor will be mocked to adjust screen brightness.
+
+config DONGLE_SCREEN_AMBIENT_LIGHT_EVALUATION_INTERVAL_MS
+    int "The interval for ambient light evaluation (in milliseconds)"
+    default 1000
+    help
+      The interval how often the ambient light level should be evaluated.
+
+config DONGLE_SCREEN_AMBIENT_LIGHT_MIN_RAW_VALUE
+    int "The minimum raw value for until your ambient sensor repects readings."
+    default 0
+    range 0 1999
+    help
+      Depending on the position and if the sensor is behind transparent plastic or not the sensor readings can be vary. Behind plastic the default value is proven good. If your ambient light changes are not too reactive you might change this.
+
+config DONGLE_SCREEN_AMBIENT_LIGHT_MAX_RAW_VALUE
+    int "The maximum raw value for until your ambient sensor repects readings."
+    default 100
+    range 100 3000
+    help
+      Depending on the position and if the sensor is behind transparent plastic or not the sensor readings can be vary. Behind plastic the default value is proven good. If your ambient light changes are not too reactive you might change this.
+
+config DONGLE_SCREEN_BRIGHTNESS_MODIFIER
+    int "The modifier to start the application with."
+    default 0
+    range -99 99
+    help
+      The modifier to start the dongle with. Useful if you found a modifier comfortable for you. Espacially for ambient light. Otherwise no need to change.
+config DONGLE_SCREEN_SYSTEM_ICON
+    int "The icon to display when the 'LGUI'/'RGUI' is pressed. (0: macOS, 1: Linux, 2: Windows)"
+    default 0
+    range 0 2
+    help
+        The icon to display when the 'LGUI'/'RGUI' is pressed. Can be used to better match the Mod Widget to the underlying system.
+        (0: macOS, 1: Linux, 2: Windows)
+endif
