@@ -35,4 +35,4 @@ include:
     artifact-name: reset
 
   - board: seeeduino_xiao_ble
-    shield: cornix_dongle prospector_adapter
+    shield: prospector_adapter_dongle prospector_adapter
