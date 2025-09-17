@@ -4,12 +4,3 @@ build:
   settings:
     board_root: .
     snippet_root: .
-
-name: dongle_screen
-build:
-  cmake: .
-  kconfig: Kconfig
-  settings:
-    board_root: .
-  depends:
-    - lvgl
