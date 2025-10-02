@@ -4,7 +4,7 @@ name: CORNIX_YADS
 type: shield
 url: https://github.com/bwshockley/zmk-keyboard-cornix
 requires: [Cornix]
-exposes: [i2c_oled]
+exposes: []
 features:
   - keys
   - display
