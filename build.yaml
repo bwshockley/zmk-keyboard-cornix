@@ -35,7 +35,7 @@ include:
     artifact-name: reset
 
   - board: seeeduino_xiao_ble
-    shield: cornix_yads_dongle dongle_screen
+    shield: cornix_yads dongle_screen
     #cmake-args: -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000 #optional if logging is enabled
     #snippet: zmk-usb-logging #only enable for debugging
     artifact-name: yads_dongle
