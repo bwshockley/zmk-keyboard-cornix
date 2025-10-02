@@ -1,5 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <cornix-layouts.dtsi>
+#import "cornix-layouts.dtsi"
 
 / {
     chosen {
