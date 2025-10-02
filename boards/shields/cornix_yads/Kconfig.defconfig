@@ -1,4 +1,4 @@
-if SHIELD_CORNIX_YADS_DONGLE
+if SHIELD_CORNIX_YADS
 
 # Max 16 characters in keyboard name
 config ZMK_KEYBOARD_NAME
