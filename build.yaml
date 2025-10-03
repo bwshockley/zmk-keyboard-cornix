@@ -38,9 +38,14 @@ include:
     shield: cornix_yads dongle_screen
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-    #cmake-args: -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000 #optional if logging is enabled
-    #snippet: zmk-usb-logging #only enable for debugging
     artifact-name: yads_dongle
+
+  - board: seeeduino_xiao_ble
+    shield: cornix_prospector dongle_screen
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: prospector_dongle
+
 
   - board: seeeduino_xiao_ble
     shield: settings_reset
