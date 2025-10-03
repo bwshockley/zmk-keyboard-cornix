@@ -1,18 +1,6 @@
-# ZMK Keyboard for  Cornix
+# ZMK Keyboard for Cornix supporting various dongles.
 
-This community firmwarw has been tested with Cornix using ZMK and provides full split-role configuration, battery power management, and Bluetooth central/peripheral setup per ZMK split guidelines 
-
-
-![image](images/cornix_with_dongle.png)
-![image](images/cornix_layout.png)
-
-## TODO LIST
-
-- [x] 52 keys full layout keymap, since v2.0
-- [x] ec11 encoder, since v2.2
-- [x] no-SD image, since v2.3
-- [x] rgb since v3
-
+This firmware has been tested with Cornix using ZMK and provides full split-role configuration, battery power management, and Bluetooth central/peripheral setup per ZMK split guidelines.
 
 ### about RGB
 
@@ -36,16 +24,6 @@ Cornix is a Corne‑inspired split ergonomic keyboard featuring a compact 3×6 c
 - Premium **CNC‑machined aluminum chassis**, custom damping foam, and portable storage pouch.
 
 > this project owner is RMK contributor too, support RMK https://rmk.rs/ please 
-
-## --Bootloader Recovery Instructions--
-
--- The original RMK firmware removed the SoftDevice, so before flashing `zmk.uf2`, you need to restore the SoftDevice first. For specific steps, please refer to [bootloader/README.md](./bootloader/README.md). --
-
-Since v2.3 this board' flash partitions has updated, removed SD (reducing sd partitionsize size from 150K to 4K), so You can flash firmware directly.
-
-> You may need to reset fw by reset.uf2 from ealier version
-
-> You can rollback to stock firmware by flash orgin uf2 file, backup files under rmkfw/
 
 ## 🔰 Easy Method: Clone This Repository and Build with GitHub Actions
 
@@ -172,79 +150,3 @@ Edit the `build.yaml` file, add:
 > 1. If you are using (default) cornix without dongle, choose "cornix_left", "cornix_right" and "reset".
 > 2. If you are using cornix with dongle, choose "cornix_dongle". "cornix_left_for_dongle", "cornix_right" and "reset".
 > 3. Add "cornix_indicator" shield to enable RGB led light. It consumes much more power, use at your own risk.
-
-```yaml
-include:
-  # Use cornix with dongle
-  - board: cornix_dongle
-    shield: cornix_dongle_eyelash dongle_display
-    snippet: studio-rpc-usb-uart
-    artifact-name: cornix_dongle
-
-  - board: cornix_ph_left
-    # shield: cornix_indicator
-    artifact-name: cornix_left_for_dongle
-
-  # Use cornix without dongle
-  - board: cornix_left
-    # shield: cornix_indicator
-    artifact-name: cornix_left
-
-  - board: cornix_right
-    # shield: cornix_indicator
-    artifact-name: cornix_right
-
-  - board: cornix_right
-    shield: settings_reset
-    artifact-name: reset
-```
-
-### 4. Build Firmware
-
-Use your preferred method to build
-
-- no need to recovery the sd since 2.3
-- falsh reset.uf2 both side of cornix
-- flash left and right uf2 files
-- reset both side at the same time.
-
-### 5. Flash Firmware
-
-Flash the generated `.uf2` files to the corresponding microcontroller:
-- Left half: `build/left/zephyr/zmk.uf2`
-- Right half: `build/right/zephyr/zmk.uf2`
-
-## Build This Project Locally (Without west.yaml Dependency)
-
-If you prefer to build this project locally without adding it as a dependency in your west.yaml, you can use the ZMK_EXTRA_MODULES cmake argument.
-
-### Prerequisites
-
-1. Have a working ZMK development environment set up
-2. Clone this repository to a local directory
-
-### Build Steps
-
-1. **Clone this repository**:
-   ```bash
-   git clone https://github.com/hitsmaxft/zmk-keyboard-cornix.git
-   ```
-
-2. **Configure your ZMK build with the extra module**:
-   
-   Edit your `.west/config` file and add the cmake argument under the `[build]` section:
-   
-   ```ini
-   [build]
-   cmake-args = -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DZMK_EXTRA_MODULES=/full/absolute/path/to/zmk-keyboard-cornix
-   ```
-   
-   Replace `/full/absolute/path/to/zmk-keyboard-cornix` with the actual absolute path where you cloned this repository.
-
-3. **Build the firmware**:
-   ```bash
-   west build -b cornix_e73 -- -DSHIELD=cornix_main_left
-   west build -b cornix_e73 -- -DSHIELD=cornix_right
-   ```
-
-This method allows you to use the Cornix shield without modifying your existing ZMK configuration's west.yaml file.
