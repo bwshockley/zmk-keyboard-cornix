@@ -41,7 +41,7 @@ include:
     artifact-name: yads_dongle
 
   - board: seeeduino_xiao_ble
-    shield: cornix_prospector dongle_screen
+    shield: cornix_prospector prospector_adapter
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: prospector_dongle
