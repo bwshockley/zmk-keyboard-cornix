@@ -26,3 +26,4 @@ config BT_MAX_PAIRED
 
 endif
 
+
