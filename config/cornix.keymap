@@ -9,7 +9,6 @@
 
 #define HM_TAPPING_TERM 250
 #define HM_TAPPING_REPEAT 210
-
 #define HM_TAPPING_TERM_FAST    200
 #define HM_PRIOR_IDLE           70
 #define BASE                    0
@@ -17,7 +16,6 @@
 #define LOWER                   2
 #define RAISE                   3
 #define ORANGE                  4
-
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5  // left hand
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5  // right hand
 #define THUMBS LH1 LH0 RH0 RH1
@@ -29,9 +27,6 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-
-    behaviors { };
-
     conditional_layers { compatible = "zmk,conditional-layers"; };
 
     combos { compatible = "zmk,combos"; };
@@ -54,10 +49,10 @@
         orange_layer {
             display-name = "Orange";
             bindings = <
-&kp ESCAPE  &kp N1  &kp N2  &kp N3  &kp N4         &kp N5                     &kp N6     &kp N7   &kp N8  &kp N9  &kp N0        &kp DEL
-&trans      &trans  &trans  &trans  &kp SEMICOLON  &kp MINUS                  &kp EQUAL  &kp SQT  &trans  &trans  &trans        &trans
-&trans      &trans  &trans  &trans  &trans         &trans     &trans  &trans  &trans     &trans   &trans  &trans  &kp UP_ARROW  &trans
-&trans      &trans  &trans  &trans  &trans         &trans                     &trans     &trans   &trans  &trans  &trans        &trans
+&kp ESCAPE  &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT                  &kp CARET  &kp AMPERSAND      &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DEL
+&trans      &trans    &trans  &trans    &kp COLON   &kp UNDER                    &kp PLUS   &kp DOUBLE_QUOTES  &trans     &trans                &trans                 &trans
+&trans      &trans    &trans  &trans    &trans      &trans       &trans  &trans  &trans     &trans             &trans     &trans                &kp UP_ARROW           &trans
+&trans      &trans    &trans  &trans    &trans      &trans                       &trans     &trans             &trans     &trans                &trans                 &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -66,10 +61,10 @@
         lower_layer {
             display-name = "Lower";
             bindings = <
-&none  &kp EXCLAMATION  &kp AT  &kp HASH  &kp DLLR   &kp PRCNT                  &kp CARET  &kp AMPS           &kp ASTRK  &kp LPAR   &kp RPAR  &none
-&none  &none            &none   &none     &kp COLON  &kp MINUS                  &kp PLUS   &kp DOUBLE_QUOTES  &none      &none      &none     &none
-&none  &none            &none   &none     &none      &none      &trans  &trans  &none      &kp QUESTION       &kp GRAVE  &kp TILDE  &kp SQT   &none
-&none  &none            &none   &none     &trans     &trans                     &trans     &trans             &none      &none      &none     &none
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                  &kp NUMBER_6  &kp NUMBER_7      &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
+&none   &none         &none         &none         &kp SEMI      &kp MINUS                     &kp EQUAL     &kp SINGLE_QUOTE  &none         &none         &none         &none
+&trans  &none         &none         &none         &none         &none         &trans  &trans  &none         &trans            &trans        &kp TILDE     &trans        &trans
+&none   &none         &none         &none         &trans        &trans                        &trans        &trans            &none         &trans        &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -80,8 +75,8 @@
             bindings = <
 &trans  &kp F1  &kp F2  &kp F3   &kp F4  &kp F5                         &kp F6    &kp F7     &kp F8     &kp F9    &kp F10  &kp F11
 &trans  &kp N5  &kp N4  &kp N3   &kp N2  &kp N1                         &kp BSPC  &kp MINUS  &kp EQUAL  &kp PLUS  &kp DQT  &kp F12
-&trans  &kp N6  &kp N7  &kp N8   &kp N9  &kp N0         &trans  &trans  &kp TAB   &kp INS    &kp HOME   &kp END   &trans   &trans
-&none   &none   &none   &kp TAB  &trans  &kp BACKSPACE                  &trans    &trans     &kp N3     &none     &none    &none
+&trans  &kp N6  &kp N7  &kp N8   &kp N9  &kp N0         &trans  &trans  &kp TAB   &kp INS    &kp HOME   &kp END   &kp F24  &trans
+&none   &none   &none   &kp TAB  &trans  &kp BACKSPACE                  &trans    &trans     &kp N3     &none     &kp F23  &kp F22
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
