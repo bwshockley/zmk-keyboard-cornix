@@ -8,8 +8,8 @@ manifest:
       url-base: https://github.com/urob
     - name: janpfischer
       url-base: https://github.com/janpfischer
-    - name: carrefinho
-      url-base: https://github.com/carrefinho
+    - name: bwshockley
+      url-base: https://github.com/bwshockley
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -33,7 +33,7 @@ manifest:
       remote: janpfischer
       revision: main
     - name: prospector-zmk-module
-      remote: carrefinho
+      remote: bwshockley
       revision: main
   self:
     path: config
