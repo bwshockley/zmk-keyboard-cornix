@@ -11,9 +11,9 @@
 #define HM_TAPPING_REPEAT 210
 #define HM_TAPPING_TERM_FAST    200
 #define HM_PRIOR_IDLE           70
-#define BASE                    0
-#define ORANGE                  1
-#define LOWER                   2
+#define ORANGE                  0
+#define LOWER                   1
+#define BASE                    2
 #define RAISE                   3
 #define GREEN                   4
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5  // left hand
