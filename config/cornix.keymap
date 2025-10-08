@@ -31,6 +31,15 @@
 
     combos { compatible = "zmk,combos"; };
 
+    macros {
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(C) &kp R &kp A &kp S &kp H &kp MINUS &kp A &kp N &kp D &kp MINUS &kp LS(B) &kp U &kp R &kp N &kp N2 &kp N0 &kp N2 &kp N5 &kp EXCL>;
+            label = "NEW_MACRO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -43,7 +52,9 @@
 &kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1  &mo 2  &kp ENTER                               &kp SPACE  &mo 3  &mo 4      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings =
+                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
+                <&inc_dec_kp PG_UP PG_DN>;
         };
 
         orange_layer {
@@ -85,11 +96,15 @@
         green_layer {
             display-name = "Green";
             bindings = <
-&bt BT_CLR    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                   &none  &none  &none  &none           &none           &studio_unlock
-&bt BT_SEL 0  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                  &none  &none  &none  &none           &none           &none
-&bt BT_SEL 1  &none          &none          &none          &none          &none          &trans  &trans  &none  &none  &none  &none           &kp UP_ARROW    &none
-&bt BT_SEL 2  &none          &none          &none          &none          &none                          &none  &none  &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+&bt BT_CLR    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                   &none  &none  &none  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &new_macro
+&bt BT_SEL 0  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                  &none  &none  &none  &none             &none              &none
+&bt BT_SEL 1  &none          &none          &none          &none          &none          &trans  &trans  &none  &none  &none  &none             &kp UP_ARROW       &none
+&bt BT_SEL 2  &none          &none          &none          &none          &none                          &none  &none  &none  &kp LEFT_ARROW    &kp DOWN_ARROW     &kp RIGHT_ARROW
             >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
+                <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
     };
 };
