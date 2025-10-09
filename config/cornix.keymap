@@ -60,10 +60,10 @@
         orange_layer {
             display-name = "Orange";
             bindings = <
-&kp ESCAPE  &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT                  &kp CARET  &kp AMPERSAND      &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DEL
-&trans      &trans    &trans  &trans    &kp COLON   &kp UNDER                    &kp PLUS   &kp DOUBLE_QUOTES  &trans     &trans                &trans                 &trans
-&trans      &trans    &trans  &trans    &trans      &trans       &trans  &trans  &trans     &trans             &trans     &trans                &kp UP_ARROW           &trans
-&trans      &trans    &trans  &trans    &trans      &trans                       &trans     &trans             &trans     &trans                &trans                 &trans
+&kp ESCAPE  &kp EXCL  &kp AT          &kp HASH  &kp DOLLAR  &kp PERCENT                  &kp CARET       &kp AMPERSAND      &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DEL
+&trans      &trans    &kp SCROLLLOCK  &trans    &kp COLON   &kp UNDER                    &kp PLUS        &kp DOUBLE_QUOTES  &trans     &trans                &trans                 &trans
+&trans      &trans    &trans          &trans    &trans      &trans       &trans  &trans  &kp KP_NUMLOCK  &trans             &trans     &trans                &kp UP_ARROW           &trans
+&trans      &trans    &trans          &trans    &trans      &trans                       &trans          &trans             &trans     &trans                &trans                 &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
