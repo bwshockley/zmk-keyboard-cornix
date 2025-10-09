@@ -22,17 +22,17 @@ include:
 #    #shield: cornix_indicator
 #    artifact-name: cornix_left_default
 
-#  - board: cornix_ph_left
-#    #shield: cornix_indicator
-#    artifact-name: cornix_left_for_dongle
+  - board: cornix_ph_left
+    #shield: cornix_indicator
+    artifact-name: cornix_left_for_dongle
 
-#  - board: cornix_right
-#    #shield: cornix_indicator
-#    artifact-name: cornix_right
+  - board: cornix_right
+    #shield: cornix_indicator
+    artifact-name: cornix_right
 
-#  - board: cornix_right
-#    shield: settings_reset
-#    artifact-name: reset
+  - board: cornix_right
+    shield: settings_reset
+    artifact-name: keyboard_reset
 
   - board: seeeduino_xiao_ble
     shield: cornix_yads dongle_screen
