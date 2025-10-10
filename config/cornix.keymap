@@ -27,9 +27,23 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    conditional_layers { compatible = "zmk,conditional-layers"; };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
 
-    combos { compatible = "zmk,combos"; };
+        numlock {
+            if-layers = <1 4>;
+            then-layer = <5>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        new_combo {
+            bindings = <&caps_word>;
+            key-positions = <42 45>;
+        };
+    };
 
     macros {
         new_macro: new_macro {
@@ -105,6 +119,16 @@
             sensor-bindings =
                 <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
                 <&inc_dec_kp PAGE_UP PAGE_DOWN>;
+        };
+
+        numlock {
+            display-name = "Numlock";
+            bindings = <
+&trans  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4  &kp KP_N5                  &kp KP_N6  &kp KP_N7  &kp KP_N8  &kp KP_NUMBER_9  &kp KP_N0  &trans
+&trans  &trans     &trans     &trans     &trans     &trans                     &trans     &trans     &trans     &trans           &trans     &trans
+&trans  &trans     &trans     &trans     &trans     &trans     &trans  &trans  &trans     &trans     &trans     &trans           &trans     &trans
+&trans  &trans     &trans     &trans     &trans     &trans                     &trans     &trans     &trans     &trans           &trans     &trans
+            >;
         };
     };
 };
