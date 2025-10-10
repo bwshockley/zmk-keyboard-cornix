@@ -27,14 +27,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        numlock {
-            if-layers = <1 4>;
-            then-layer = <5>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 
     combos {
         compatible = "zmk,combos";
@@ -42,6 +35,16 @@
         new_combo {
             bindings = <&caps_word>;
             key-positions = <42 45>;
+        };
+
+        numlock {
+            bindings = <&tog 5>;
+            key-positions = <41 46>;
+        };
+
+        numlock_kp {
+            bindings = <&kp KP_NUMLOCK>;
+            key-positions = <41 46>;
         };
     };
 
@@ -89,7 +92,7 @@
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                  &kp NUMBER_6  &kp NUMBER_7      &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
 &none   &none         &none         &none         &kp SEMI      &kp MINUS                     &kp EQUAL     &kp SINGLE_QUOTE  &none         &none         &none         &none
 &trans  &none         &none         &none         &none         &none         &trans  &trans  &none         &trans            &trans        &kp TILDE     &trans        &trans
-&none   &none         &none         &none         &trans        &trans                        &trans        &trans            &none         &trans        &trans        &trans
+&none   &none         &none         &trans        &trans        &trans                        &trans        &trans            &trans        &trans        &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -98,10 +101,10 @@
         raise_layer {
             display-name = "Raise";
             bindings = <
-&trans  &kp F1  &kp F2  &kp F3   &kp F4  &kp F5                         &kp F6    &kp F7     &kp F8     &kp F9    &kp F10  &kp F11
-&trans  &kp N5  &kp N4  &kp N3   &kp N2  &kp N1                         &kp BSPC  &kp MINUS  &kp EQUAL  &kp PLUS  &kp DQT  &kp F12
-&trans  &kp N6  &kp N7  &kp N8   &kp N9  &kp N0         &trans  &trans  &kp TAB   &kp INS    &kp HOME   &kp END   &kp F24  &trans
-&none   &none   &none   &kp TAB  &trans  &kp BACKSPACE                  &trans    &trans     &kp N3     &none     &kp F23  &kp F22
+&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                  &kp F6    &kp F7     &kp F8     &kp F9    &kp F10  &kp F11
+&trans  &kp N5  &kp N4  &kp N3  &kp N2  &kp N1                  &kp BSPC  &kp MINUS  &kp EQUAL  &kp PLUS  &kp DQT  &kp F12
+&trans  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &trans  &trans  &kp TAB   &kp INS    &kp HOME   &kp END   &kp F24  &trans
+&none   &none   &none   &trans  &trans  &trans                  &trans    &trans     &trans     &none     &kp F23  &kp F22
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -110,10 +113,10 @@
         green_layer {
             display-name = "Green";
             bindings = <
-&bt BT_CLR    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                   &none  &none  &none  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &new_macro
-&bt BT_SEL 0  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                  &none  &none  &none  &none             &none              &none
-&bt BT_SEL 1  &none          &none          &none          &none          &none          &trans  &trans  &none  &none  &none  &none             &kp UP_ARROW       &none
-&bt BT_SEL 2  &none          &none          &none          &none          &none                          &none  &none  &none  &kp LEFT_ARROW    &kp DOWN_ARROW     &kp RIGHT_ARROW
+&bt BT_CLR    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                   &none   &none  &none   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &new_macro
+&bt BT_SEL 0  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                  &none   &none  &none   &none             &none              &none
+&bt BT_SEL 1  &none          &none          &none          &none          &none          &trans  &trans  &none   &none  &none   &none             &kp UP_ARROW       &none
+&bt BT_SEL 2  &none          &none          &trans         &none          &trans                         &trans  &none  &trans  &kp LEFT_ARROW    &kp DOWN_ARROW     &kp RIGHT_ARROW
             >;
 
             sensor-bindings =
