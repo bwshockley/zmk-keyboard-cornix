@@ -36,7 +36,7 @@ include:
 
   - board: seeeduino_xiao_ble
     shield: cornix_yads dongle_screen
-    snippet: studio-rpc-usb-uart
+    snippet: zmk-usb-logging
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: yads_dongle
 
