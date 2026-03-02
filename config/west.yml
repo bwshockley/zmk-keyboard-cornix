@@ -8,6 +8,10 @@ manifest:
       url-base: https://github.com/urob
     - name: janpfischer
       url-base: https://github.com/janpfischer
+    - name: carrefinho
+      url-base: https://github.com/carrefinho
+    - name: bwshockley
+      url-base: https://github.com/bwshockley
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -19,17 +23,19 @@ manifest:
       remote: urob
       revision: main
       clone-depth: 1
-    #- name: zmk-rgbled-widget
-    #  remote: hitsmaxft
-    #  revision: main
-    #  clone-depth: 1
+    - name: zmk-rgbled-widget
+      remote: hitsmaxft
+      revision: main
+      clone-depth: 1
     - name: zmk-dongle-display
       remote: hitsmaxft
-      revision: zephyr4
+      revision: main
       clone-depth: 1
-    #- name: zmk-dongle-screen
-    #  remote: janpfischer
-    #  revision: main
-    #  clone-depth: 1
+    - name: zmk-dongle-screen
+      remote: bwshockley
+      revision: main
+    - name: prospector-zmk-module
+      remote: carrefinho
+      revision: main
   self:
     path: config
