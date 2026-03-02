@@ -2,10 +2,11 @@ file_format: "1"
 id: cornix_dongle_eyelash
 name: CORNIX_DONGLE_EYELASH
 type: shield
-url: https://github.com/hitsmaxft/zmk-keyboard-cornix
+url: https://github.com/hitsmaxft/TBK-Mini
 requires: [Cornix]
 exposes: [i2c_oled]
 features:
+  - keys
   - display
 siblings:
   - cornix_dongle_eyelash
