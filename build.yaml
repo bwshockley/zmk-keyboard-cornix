@@ -34,19 +34,19 @@ include:
     shield: settings_reset
     artifact-name: reset
 
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: cornix_yads dongle_screen
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: yads_dongle
 
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: cornix_prospector prospector_adapter
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: prospector_dongle
 
 
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: settings_reset
     artifact-name: dongle_reset
