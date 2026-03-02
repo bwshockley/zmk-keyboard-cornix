@@ -1,0 +1,12 @@
+file_format: "1"
+id: cornix_prospector
+name: CORNIX_PROSPECTOR
+type: shield
+url: https://github.com/bwshockley/zmk-keyboard-cornix
+requires: [Cornix]
+exposes: []
+features:
+  - keys
+  - display
+siblings:
+  - cornix_prospector

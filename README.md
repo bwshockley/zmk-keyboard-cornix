@@ -50,6 +50,7 @@ you have two solutions
 - [x] upgrade to zephyr4.1 and lvgl9 , since v2.7, no dongle screen support yet
 - [ ] rgb since in future v3
 
+This firmware has been tested with Cornix using ZMK and provides full split-role configuration, battery power management, and Bluetooth central/peripheral setup per ZMK split guidelines.
 
 ### about RGB
 
@@ -73,16 +74,6 @@ Cornix is a Corne‑inspired split ergonomic keyboard featuring a compact 3×6 c
 - Premium **CNC‑machined aluminum chassis**, custom damping foam, and portable storage pouch.
 
 > this project owner is RMK contributor too, support RMK https://rmk.rs/ please
-
-## --Bootloader Recovery Instructions--
-
--- The original RMK firmware removed the SoftDevice, so before flashing `zmk.uf2`, you need to restore the SoftDevice first. For specific steps, please refer to [bootloader/README.md](./bootloader/README.md). --
-
-Since v2.3 this board' flash partitions has updated, removed SD (reducing sd partitionsize size from 150K to 4K), so You can flash firmware directly.
-
-> You may need to reset fw by reset.uf2 from ealier version
-
-> You can rollback to stock firmware by flash orgin uf2 file, backup files under rmkfw/
 
 ## 🔰 Easy Method: Clone This Repository and Build with GitHub Actions
 
@@ -342,12 +333,9 @@ If you prefer to build this project locally without adding it as a dependency in
 
 3. **Build the firmware**:
    ```bash
-<<<<<<< HEAD
    west build -b cornix_main_left
-=======
-   west build -b cornix_left
->>>>>>> 16dcccb (migrate to zephyr4 , disable dongle screen)
    west build -b cornix_right
    ```
 
 This method allows you to use the Cornix shield without modifying your existing ZMK configuration's west.yaml file.
+=======
