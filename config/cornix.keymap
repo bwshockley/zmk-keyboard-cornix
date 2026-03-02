@@ -43,6 +43,15 @@
         };
     };
 
+    macros {
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(C) &kp R &kp A &kp S &kp H &kp MINUS &kp A &kp N &kp D &kp MINUS &kp LS(B) &kp U &kp R &kp N &kp N2 &kp N0 &kp N2 &kp N6 &kp EXCL>;
+            label = "NEW_MACRO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
