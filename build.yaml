@@ -20,15 +20,15 @@ include:
 
   - board: cornix_left
     #shield: cornix_indicator
-    artifact-name: cornix_left_default
+    artifact-name: cornix_left_default_nosd
 
   - board: cornix_ph_left
     #shield: cornix_indicator
-    artifact-name: cornix_left_for_dongle
+    artifact-name: cornix_left_for_dongle_nosd
 
   - board: cornix_right
     #shield: cornix_indicator
-    artifact-name: cornix_right
+    artifact-name: cornix_right_nosd
 
   - board: cornix_right
     shield: settings_reset
@@ -50,4 +50,4 @@ include:
 
   - board: seeeduino_xiao_ble
     shield: settings_reset
-    artifact-name: dongle_reset
+    artifact-name: dongle_reset_nosd
