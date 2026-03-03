@@ -1,4 +1,4 @@
-# Electronut Labs Papyr board configuration
+# Cornix board configuration
 
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
@@ -60,8 +60,8 @@ endif # BOARD_CORNIX_RIGHT
 if BOARD_CORNIX_LEFT  || BOARD_CORNIX_DONGLE || BOARD_CORNIX_PH_LEFT || BOARD_CORNIX_RIGHT
 
 
-config BT_CTLR
-    default BT
+# config BT_CTLR
+#     default BT
 
 config BOARD_CORNIX_CHARGER
     default y
@@ -81,6 +81,4 @@ config ZMK_RGB_UNDERGLOW_EXT_POWER
 	default n
 
 endif # BOARD_CORNIX_LEFT || BOARD_CORNIX_RIGHT
-
-
 # vim: set ft=kconfig:
