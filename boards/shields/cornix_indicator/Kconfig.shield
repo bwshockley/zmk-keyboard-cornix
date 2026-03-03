@@ -1,2 +1,0 @@
-config SHIELD_CORNIX_INDICATOR
-	def_bool $(shields_list_contains, cornix_indicator)
