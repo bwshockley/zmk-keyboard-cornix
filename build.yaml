@@ -35,7 +35,7 @@ include:
     snippet: studio-rpc-usb-uart nrf52840-nosd
     artifact-name: cornix_reset
 
-  - board: xiao_ble//zmk
+  - board: seeeduino_xiao_ble
     shield: cornix_yads dongle_screen
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
@@ -48,6 +48,6 @@ include:
   #   artifact-name: prospector_dongle
 
 
-  - board: xiao_ble//zmk
+  - board: seeeduino_xiao_ble
     shield: settings_reset
     artifact-name: dongle_reset
