@@ -26,8 +26,5 @@ manifest:
     - name: zmk-dongle-screen
       remote: bwshockley
       revision: main
-    - name: prospector-zmk-module
-      remote: carrefinho
-      revision: main
   self:
     path: config
