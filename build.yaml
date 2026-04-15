@@ -13,41 +13,44 @@
 #
 ---
 include:
-  # - board: cornix_dongle
-  #   shield: cornix_dongle_eyelash dongle_display
-  #   snippet: studio-rpc-usb-uart
-  #   artifact-name: cornix_dongle
+  #- board: cornix_dongle
+  #  shield: cornix_dongle_eyelash dongle_display
+  #  snippet: studio-rpc-usb-uart
+  #  artifact-name: cornix_dongle
 
   - board: cornix_left
     #shield: cornix_indicator
-    artifact-name: cornix_left_default_nosd
+    artifact-name: cornix_left_default
 
   - board: cornix_ph_left
     #shield: cornix_indicator
-    artifact-name: cornix_left_for_dongle_nosd
+    artifact-name: cornix_left_for_dongle
 
   - board: cornix_right
     #shield: cornix_indicator
-    artifact-name: cornix_right_nosd
+    artifact-name: cornix_right
 
   - board: cornix_right
     shield: settings_reset
-    snippet: studio-rpc-usb-uart nrf52840-nosd
-    artifact-name: cornix_reset
+    artifact-name: reset
+
+  #- board: xiao_ble//zmk
+  #  shield: cornix_yads dongle_screen
+  #  snippet: studio-rpc-usb-uart
+  #  cmake-args: -DCONFIG_ZMK_STUDIO=y
+  #  artifact-name: yads_dongle
 
   - board: xiao_ble//zmk
-    shield: cornix_yads dongle_screen
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-    artifact-name: yads_dongle
+    shield: cornix_prospector_dongle prospector_adapter
+    artifact-name: prospector_dongle 
 
-  # - board: xiao_ble//zmk
-  #   shield: cornix_prospector prospector_adapter
-  #   snippet: studio-rpc-usb-uart
-  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
-  #   artifact-name: prospector_dongle
+  #- board: xiao_ble//zmk
+  #  shield: cornix_prospector prospector_adapter
+  #  snippet: studio-rpc-usb-uart
+  #  cmake-args: -DCONFIG_ZMK_STUDIO=y
+  #  artifact-name: prospector_dongle
 
 
   - board: xiao_ble//zmk
     shield: settings_reset
-    artifact-name: dongle_reset_nosd
+    artifact-name: dongle_reset
