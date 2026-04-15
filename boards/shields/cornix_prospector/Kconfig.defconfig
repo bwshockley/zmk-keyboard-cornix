@@ -2,7 +2,9 @@ if SHIELD_CORNIX_PROSPECTOR
 
 # Max 16 characters in keyboard name
 config ZMK_KEYBOARD_NAME
-    default "Cornix Prongle"
+    default "Cornix Prospector"
+
+CONFIG_PROSPECTOR_STATUS_SCREEN_OPERATOR=y
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
