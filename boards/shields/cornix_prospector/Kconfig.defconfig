@@ -4,8 +4,6 @@ if SHIELD_CORNIX_PROSPECTOR
 config ZMK_KEYBOARD_NAME
     default "Cornix Prospector"
 
-CONFIG_PROSPECTOR_STATUS_SCREEN_OPERATOR=y
-
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
