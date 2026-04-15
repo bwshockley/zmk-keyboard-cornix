@@ -13,10 +13,10 @@
 #
 ---
 include:
-  - board: cornix_dongle
-    shield: cornix_dongle_eyelash dongle_display
-    snippet: studio-rpc-usb-uart
-    artifact-name: cornix_dongle
+  #- board: cornix_dongle
+  #  shield: cornix_dongle_eyelash dongle_display
+  #  snippet: studio-rpc-usb-uart
+  #  artifact-name: cornix_dongle
 
   - board: cornix_left
     #shield: cornix_indicator
@@ -34,17 +34,21 @@ include:
     shield: settings_reset
     artifact-name: reset
 
-  - board: xiao_ble//zmk
-    shield: cornix_yads dongle_screen
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-    artifact-name: yads_dongle
+  #- board: xiao_ble//zmk
+  #  shield: cornix_yads dongle_screen
+  #  snippet: studio-rpc-usb-uart
+  #  cmake-args: -DCONFIG_ZMK_STUDIO=y
+  #  artifact-name: yads_dongle
 
   - board: xiao_ble//zmk
-    shield: cornix_prospector prospector_adapter
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-    artifact-name: prospector_dongle
+    shield: cornix_prospector_dongle prospector_adapter
+    artifact-name: prospector_dongle 
+
+  #- board: xiao_ble//zmk
+  #  shield: cornix_prospector prospector_adapter
+  #  snippet: studio-rpc-usb-uart
+  #  cmake-args: -DCONFIG_ZMK_STUDIO=y
+  #  artifact-name: prospector_dongle
 
 
   - board: xiao_ble//zmk
