@@ -41,7 +41,7 @@ include:
   #  artifact-name: yads_dongle
 
   - board: xiao_ble//zmk
-    shield: cornix_prospector_dongle prospector_adapter
+    shield: cornix_yads_dongle prospector_adapter
     artifact-name: prospector_dongle 
 
   #- board: xiao_ble//zmk
