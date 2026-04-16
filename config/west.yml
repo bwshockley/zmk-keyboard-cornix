@@ -26,5 +26,8 @@ manifest:
     - name: zmk-dongle-screen
       remote: bwshockley
       revision: main
+    - name: prospector-zmk-module                 # <--- and these
+      remote: carrefinho                          # <---
+      revision: feat/new-status-screens           # <---
   self:
     path: config
