@@ -10,7 +10,7 @@ config ZMK_SPLIT_ROLE_CENTRAL
 config ZMK_SPLIT
     default y
 
-choice PROSPECTOR_MODIFIER_OS
+config PROSPECTOR_MODIFIER_OS
    default PROSPECTOR_MODIFIER_OS_WINDOWS
 
 # Set this to the number of peripherals your dongle will have.
