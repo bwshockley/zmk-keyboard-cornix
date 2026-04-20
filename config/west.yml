@@ -23,11 +23,11 @@ manifest:
       remote: urob
       revision: main
       clone-depth: 1
-    - name: zmk-dongle-screen
-      remote: bwshockley
-      revision: main
+    #- name: zmk-dongle-screen
+    #  remote: bwshockley
+    #  revision: main
     - name: prospector-zmk-module                 # <--- and these
-      remote: carrefinho                          # <---
+      remote: bwshockley                          # <---
       revision: feat/new-status-screens           # <---
   self:
     path: config
