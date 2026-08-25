@@ -1,1 +1,6 @@
-// Nothing here
+if SHIELD_CORNIX_YADS
+
+# Max 16 characters in keyboard name
+config ZMK_KEYBOARD_NAME
+    default "Cornix Dongle"
+endif
