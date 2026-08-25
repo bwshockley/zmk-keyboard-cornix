@@ -1,0 +1,12 @@
+file_format: "1"
+id: cornix_yads
+name: CORNIX_YADS
+type: shield
+url: https://github.com/bwshockley/zmk-keyboard-cornix
+requires: [Cornix]
+exposes: []
+features:
+  - keys
+  - display
+siblings:
+  - cornix_yads

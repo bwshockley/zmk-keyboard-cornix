@@ -27,15 +27,15 @@ include:
   #   snippet: studio-rpc-usb-uart
   #   artifact-name: cornix_dongle_zds_nano
   - board: cornix_left//zmk
-    # shield: cornix_indicator
+    shield: cornix_indicator
     artifact-name: cornix_left_default_nosd
 
   - board: cornix_ph_left//zmk
-    # shield: cornix_indicator
+    shield: cornix_indicator
     artifact-name: cornix_left_for_dongle_nosd
 
   - board: cornix_right//zmk
-    # shield: cornix_indicator
+    shield: cornix_indicator
     artifact-name: cornix_right_nosd
 
   - board: cornix_right//zmk
@@ -47,3 +47,12 @@ include:
     shield: settings_reset
     snippet: studio-rpc-usb-uart nrf52840-nosd
     artifact-name: reset_nicenano_nosd
+
+  - board: xiao_ble//zmk
+    shield: cornix_yads prospector_adapter
+    snippet: studio-rpc-usb-uart nrf52840-nosd
+    artifact-name: prospector_dongle
+
+  - board: xiao_ble//zmk
+    shield: settings_reset
+    artifact-name: dongle_reset
